@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <title>GUSSINO</title>
+    
+    <script type="text/javascript" src="Script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    
+</head>
+<body>
+    <h1>WELCOME TO GUESSINO</h1>
+    <h2>Rules of the game</h2>
+    <p>
+        - Both players input their secret number which can be from (1-9)<br />
+        - Both players should enter individual bet money<br />
+        - Players get alternate chances with max 5 attempts to guess opponent's secret number<br />
+        - The first player to guess the opponents secret number wins!!!<br />
+        - 10% of total bet money will be deducted on each attempt<br />
+        - The company will get the bet money if both players fail<br />
+    </p>
+    <table style="width:80%;">
+        <tr>
+            <td>
+                <form >
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:35%;">
+                                <fieldset>
+                                    <legend>Player 1</legend>
+                                    <table style="width:100%;">
+                                        <tr>
+                                            <td>
+                                                Enter your secret number (1-9)
+                                            </td>
+                                            <td>
+                                                <input id="txtP1SecretNum" type="password" name="Player 1 Secret Number" size="10" maxlength="1" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Place your bet money
+                                            </td>
+                                            <td>
+                                                <input id="txtP1BetMoney" name="Player 1 Bet Money" type="tel" size="10" maxlength="3" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="button-container" id="divButtonContainer" style="text-align:center;">
+                                                    <p>
+                                                        <input class="disableBtnSet1" type="button" id="btn11" onclick="user(1,1);" value="1" />
+                                                        <input class="disableBtnSet1" type="button" id="btn21" onclick="user(2,1);" value="2" />
+                                                        <input class="disableBtnSet1" type="button" id="btn31" onclick="user(3,1);" value="3" />
+
+                                                    </p>
+                                                    <p>
+                                                        <input class="disableBtnSet1" type="button" id="btn41" onclick="user(4,1);" value="4" />
+                                                        <input class="disableBtnSet1" type="button" id="btn51" onclick="user(5,1);" value="5" />
+                                                        <input class="disableBtnSet1" type="button" id="btn61" onclick="user(6,1);" value="6" />
+
+                                                    </p>
+                                                    <p>
+                                                        <input class="disableBtnSet1" type="button" id="btn71" onclick="user(7,1);" value="7" />
+                                                        <input class="disableBtnSet1" type="button" id="btn81" onclick="user(8,1);" value="8" />
+                                                        <input class="disableBtnSet1" type="button" id="btn91" onclick="user(9,1);" value="9" />
+
+                                                    </p>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td style="width:30%;">
+                                <input class="disableLockBtn" type="button" id="btnLock" onclick="LockBet(1)" value="Player 1 and Player 2, CLICK HERE to LOCK the bet!" style="background-color:orange;color:black;font-weight:bold;white-space:pre-line;height:80px;border-radius:90px" />
+                                <div style="height:10px"></div>
+                                <div id="tdid"></div>
+                                <div style="height:120px"></div>
+                                <div id="divAppend"></div>
+                            </td>
+                            <td style="width:35%;">
+                                <fieldset>
+                                    <legend>Player 2</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                Enter your secret number (1-9)
+                                            </td>
+                                            <td>
+                                                <input id="txtP2SecretNum" name="Player 2 Secret Number" type="password" size="10" maxlength="1" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Place your bet money
+                                            </td>
+                                            <td>
+                                                <input id="txtP2BetMoney" name="Player 2 Bet Money" type="number" size="10" maxlength="3" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="button-container" id="divButtonContainer" style="text-align:center;">
+                                                    <p>
+                                                        <input class="disableBtnSet2" type="button" id="btn12" onclick="user(1,2);" value="1" />
+                                                        <input class="disableBtnSet2" type="button" id="btn22" onclick="user(2,2);" value="2" />
+                                                        <input class="disableBtnSet2" type="button" id="btn32" onclick="user(3,2);" value="3" />
+
+                                                    </p>
+                                                    <p>
+                                                        <input class="disableBtnSet2" type="button" id="btn42" onclick="user(4,2);" value="4" />
+                                                        <input class="disableBtnSet2" type="button" id="btn52" onclick="user(5,2);" value="5" />
+                                                        <input class="disableBtnSet2" type="button" id="btn62" onclick="user(6,2);" value="6" />
+
+                                                    </p>
+                                                    <p>
+                                                        <input class="disableBtnSet2" type="button" id="btn72" onclick="user(7,2);" value="7" />
+                                                        <input class="disableBtnSet2" type="button" id="btn82" onclick="user(8,2);" value="8" />
+                                                        <input class="disableBtnSet2" type="button" id="btn92" onclick="user(9,2);" value="9" />
+
+                                                    </p>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table> 
+</body>
+</html>
